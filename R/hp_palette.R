@@ -85,9 +85,10 @@ hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = 1) {
 	colnames(hp.map) <- c("R", "G", "B", "movie")
 
 	map <- hp.map[hp.map$movie == movie, ]
-	map$order <- map$R + map$G + map$B^2
-	map <- map[order(map[,"order"]),]
-	map <- map[,c("R","G","B","movie")]
+	# map$order <- map$R + map$G + map$B
+	# map <- map[order(map[,"order"]),]
+	# map <- map[,c("R","G","B","movie")]
+
 	map_cols <- grDevices::rgb(map$R, map$G, map$B, maxColorValue = 255)
 	fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", interpolate = "spline")
 	cols <- fn_cols(seq(begin, end, length.out = n)) / 255
@@ -122,9 +123,9 @@ hpMap <- function(n = 256, alpha = 1, begin = 0, end = 1, direction = 1, movie =
 	colnames(hp.map) <- c("R", "G", "B", "movie")
 
 	map <- hp.map[hp.map$movie == movie, ]
-	map$order <- map$R + map$G + map$B^2
-	map <- map[order(map[,"order"]),]
-	map <- map[,c("R","G","B","movie")]
+	# map$order <- map$R + map$G + map$B
+	# map <- map[order(map[,"order"]),]
+	# map <- map[,c("R","G","B","movie")]
 
 	map_cols <- grDevices::rgb(map$R, map$G, map$B, maxColorValue = 255)
 	fn_cols <- grDevices::colorRamp(map_cols, space = "Lab", interpolate = "spline")
