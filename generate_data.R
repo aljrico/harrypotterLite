@@ -11,7 +11,7 @@ for(i in 1:8){
 		dplyr::mutate(movie = i) %>%
 		dplyr::group_by(V1, V2, V3, movie) %>%
 		dplyr::filter(row_number(V1) == 1) %>%
-		dplyr::arrange(V1 + V2 + V3) %>%
+		# dplyr::arrange(V1 + V2 + V3) %>%
 		data.table()
 
 	map <- rbind(map, df)
