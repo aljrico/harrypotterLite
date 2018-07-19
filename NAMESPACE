@@ -1,6 +1,3 @@
-export(scale_color_hp)
-export(scale_colour_hp)
-export(scale_fill_hp)
 export(hp)
 export(hp_pal)
 importFrom(ggplot2,discrete_scale)
