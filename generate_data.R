@@ -9,8 +9,8 @@ for(i in 1:8){
 		dplyr::mutate(V1 = gsub(".*:","",V1) %>% as.numeric()) %>%
 		dplyr::filter(!(V1 == 0 & V2 == 0 & V3 == 0)) %>%
 		dplyr::mutate(movie = i) %>%
-		dplyr::group_by(V1, V2, V3, movie) %>%
-		dplyr::filter(row_number(V1) == 1) %>%
+		# dplyr::group_by(V1, V2, V3, movie) %>%
+		# dplyr::filter(row_number(V1) == 1) %>%
 		# dplyr::arrange(V1 + V2 + V3) %>%
 		data.table()
 
