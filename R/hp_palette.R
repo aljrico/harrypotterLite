@@ -63,7 +63,7 @@
 #'
 #' @export
 #'
-hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = 1) {
+hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = NA, house = "hufflepuff") {
 	if (begin < 0 | begin > 1 | end < 0 | end > 1) {
 		stop("begin and end must be in [0,1]")
 	}
@@ -76,6 +76,10 @@ hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = 1) {
 		tmp <- begin
 		begin <- end
 		end <- tmp
+	}
+
+	if(is.na(movie) & !is.na(house)){
+		movie <- house
 	}
 
 	if(movie == 7.1) movie <- 7
@@ -103,7 +107,7 @@ hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = 1) {
 #' channels of \code{n} equally spaced colors along the 'Harry Potter' colour map.
 #' \code{n = 256} by default.
 #'
-hpMap <- function(n = 256, alpha = 1, begin = 0, end = 1, direction = 1, movie = 1) {
+hpMap <- function(n = 256, alpha = 1, begin = 0, end = 1, direction = 1, movie = NA, house = "hufflepuff") {
 	if (begin < 0 | begin > 1 | end < 0 | end > 1) {
 		stop("begin and end must be in [0,1]")
 	}
@@ -116,6 +120,10 @@ hpMap <- function(n = 256, alpha = 1, begin = 0, end = 1, direction = 1, movie =
 		tmp <- begin
 		begin <- end
 		end <- tmp
+	}
+
+	if(is.na(movie) & !is.na(house)){
+		movie <- house
 	}
 
 
