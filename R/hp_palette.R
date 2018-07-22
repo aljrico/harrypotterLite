@@ -64,6 +64,9 @@
 #' @export
 #'
 hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = NA, house = "hufflepuff") {
+
+	house <- tolower(house)
+
 	if (begin < 0 | begin > 1 | end < 0 | end > 1) {
 		stop("begin and end must be in [0,1]")
 	}
@@ -108,6 +111,9 @@ hp <- function(n, alpha = 1, begin = 0, end = 1, direction = 1, movie = NA, hous
 #' \code{n = 256} by default.
 #'
 hpMap <- function(n = 256, alpha = 1, begin = 0, end = 1, direction = 1, movie = NA, house = "hufflepuff") {
+
+	house <- tolower(house)
+
 	if (begin < 0 | begin > 1 | end < 0 | end > 1) {
 		stop("begin and end must be in [0,1]")
 	}
